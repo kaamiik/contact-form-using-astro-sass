@@ -6,13 +6,13 @@ $active-theme: $light;
 $enable-media-query-dark-mode: false;
 
 // Contextual
-$color-text-default: $color-neutral-700;
-$color-background-default: $color-primary-100;
-$color-text-interactive-default: $color-accent-400;
-$color-text-interactive-hover: $color-accent-500;
+$color-text-default: $color-neutral-900;
+$color-background-default: $color-primary-200;
+$color-text-interactive-default: $color-primary-600;
+$color-text-interactive-hover: $color-primary-200;
 
 // set to 0 to disable
-$letter-spacing-loose: 0;
+$letter-spacing-loose: -1px;
 
 $border-radius-1: $size-2;
 $border-radius-2: $size-4;
