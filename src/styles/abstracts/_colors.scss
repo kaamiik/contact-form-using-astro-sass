@@ -9,15 +9,15 @@ $-clr-red-errors: hsl(0, 66%, 54%);
 $light: (
   "neutral": (
     "100": $-clr-white,
-    "200": $-clr-green-200,
     "500": $-clr-grey-500,
+    "900": $-clr-grey-900,
   ),
   "accent": (
     "400": $-clr-red-errors,
   ),
   "primary": (
+    "200": $-clr-green-200,
     "600": $-clr-green-600,
-    "900": $-clr-grey-900,
   ),
 );
 
@@ -61,10 +61,10 @@ $light: (
 
 // contextual color tokens
 $color-neutral-100: var(--neutral-100);
-$color-neutral-200: var(--neutral-200);
 $color-neutral-500: var(--neutral-500);
+$color-neutral-900: var(--primary-900);
 
+$color-primary-200: var(--primary-200);
 $color-primary-600: var(--primary-600);
-$color-primary-900: var(--primary-900);
 
 $color-accent-400: var(--accent-400);
