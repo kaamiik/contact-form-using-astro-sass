@@ -2,10 +2,8 @@
 
 .flex-group {
   display: flex;
-  flex-wrap: wrap;
-  column-gap: var(--flex-column-gap, $flex-group-gap);
-  row-gap: var(--flex-row-gap, calc($flex-group-gap / 2));
-  width: fit-content;
+  align-items: center;
+  gap: var(--flex-column-gap, $flex-group-gap);
 }
 
 .flex-group.mx-auto {

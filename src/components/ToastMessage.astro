@@ -1,0 +1,50 @@
+---
+
+---
+
+<div
+  class="success-message-container | flow hide"
+  style="--flow-spacer: $size-2"
+  aria-live="polite"
+>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .success-message-container {
+    position: fixed;
+    padding: $toast-message-padding;
+    margin: $toast-message-margin;
+    background-color: $toast-message-background-color;
+    border-radius: $toast-message-border-radius;
+    align-self: center;
+    opacity: 0;
+    visibility: visible;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+
+  .success-message-container.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .success-message-container.hide {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  @keyframes toastMessageAnimation {
+    from {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>

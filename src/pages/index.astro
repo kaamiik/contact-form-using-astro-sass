@@ -1,14 +1,17 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import Form from "../components/Form.astro";
+import ToastMessage from "../components/ToastMessage.astro";
 ---
 
 <Layout title="Frontend Mentor | Contact form">
+  <ToastMessage />
   <div class="container flow">
-    Contact Us First Name This field is required Last Name This field is
-    required Email Address Please enter a valid email address This field is
-    required Query Type General Enquiry Support Request Please select a query
-    type Message This field is required I consent to being contacted by the team
-    To submit this form, please consent to being contacted Submit Message Sent!
-    Thanks for completing the form. We'll be in touch soon!
+    <Card title="Contact Us">
+      <Form />
+    </Card>
   </div>
 </Layout>
+
+<script type="module" src="/js/formValidation.js"></script>

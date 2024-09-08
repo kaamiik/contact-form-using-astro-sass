@@ -2,6 +2,7 @@
 
 .grid-auto-fit {
   display: grid;
-  gap: var(--grid-gap, $grid-gap);
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  column-gap: var(--grid-column-gap, $grid-gap);
+  row-gap: var(--grid-row-gap, $grid-gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(18.56rem, 100%), 1fr));
 }

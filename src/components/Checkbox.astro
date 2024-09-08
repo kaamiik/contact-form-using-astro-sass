@@ -1,0 +1,62 @@
+---
+const { id, labelText } = Astro.props;
+---
+
+<div>
+  <label for={id} class="checkbox-label">
+    <input type="checkbox" id={id} aria-describedby="checkbox-error" />
+    <p class="flex-group">
+      {labelText}
+      <span class="visually-hidden">required</span>
+      <span class="required" aria-hidden="true">*</span>
+    </p>
+  </label>
+  <p class="error hidden" id="checkbox-error"></p>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .checkbox-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: $size-4;
+    width: fit-content;
+
+    & ~ .error {
+      margin-block-start: $size-2;
+    }
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 0.15em;
+    border: 0.12em solid $color-neutral-500;
+    display: grid;
+    place-content: center;
+
+    &:before {
+      content: "";
+      width: 1.125rem;
+      height: 1.125rem;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      background-image: url("/public/assets/images/icon-checkbox-check.svg");
+    }
+
+    &:checked:before {
+      transform: scale(1);
+    }
+
+    &:focus {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
+    }
+  }
+</style>

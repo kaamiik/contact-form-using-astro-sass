@@ -1,0 +1,50 @@
+---
+import FormInput from "./FormInput.astro";
+import RadioGroup from "./RadioGroup.astro";
+import Textarea from "./Textarea.astro";
+import Checkbox from "./Checkbox.astro";
+import Button from "./Button.astro";
+
+const queryOptions = [
+  { id: "general-enquiry", value: "general-enquiry", label: "General Enquiry" },
+  { id: "support-request", value: "support-request", label: "Support Request" },
+];
+---
+
+<form action="#" method="post" novalidate>
+  <div class="flow" style="--flow-spacer: 2.5rem">
+    <div class="even-columns">
+      <div
+        class="grid-auto-fit"
+        style="--grid-column-gap: 1rem; --grid-row-gap: 1.5rem;"
+      >
+        <FormInput
+          label="First Name"
+          name="f-name"
+          id="first-name"
+          autoComplete="name"
+        />
+        <FormInput
+          label="Last Name"
+          name="l-name"
+          id="last-name"
+          autoComplete="family-name"
+        />
+      </div>
+      <FormInput
+        label="Email"
+        name="email"
+        id="email"
+        type="email"
+        autoComplete="email"
+      />
+      <RadioGroup legend="Query Type" name="query" options={queryOptions} />
+      <Textarea label="Message" name="message" id="message" rows={4} />
+    </div>
+    <Checkbox
+      id="consent-check"
+      labelText="I consent to being contacted by the team"
+    />
+    <Button theme="primary">Submit</Button>
+  </div>
+</form>

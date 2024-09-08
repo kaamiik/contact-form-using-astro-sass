@@ -1,5 +1,5 @@
 ---
-const { El = "div", TitleLevel = "h2", title } = Astro.props;
+const { El = "div", TitleLevel = "h1", title } = Astro.props;
 ---
 
 <El class="card">
@@ -23,6 +23,10 @@ const { El = "div", TitleLevel = "h2", title } = Astro.props;
 
     &__heading {
       @include heading($card-heading-font-size, $card-heading-color-default);
+    }
+
+    @include mq(medium) {
+      padding: $card-padding-desktop;
     }
   }
 </style>

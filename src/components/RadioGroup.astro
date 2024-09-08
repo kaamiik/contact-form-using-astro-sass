@@ -1,0 +1,88 @@
+---
+const { legend, name, options = [] } = Astro.props;
+---
+
+<fieldset class="flow" style="--flow-spacer: 1rem">
+  <legend class="flex-group label">
+    {legend}
+    <span class="visually-hidden">required</span>
+    <span class="required" aria-hidden="true">*</span>
+  </legend>
+  <div
+    class="grid-auto-fit"
+    style="--grid-column-gap: 1rem; --grid-row-gap: 1rem;"
+  >
+    {
+      options.map((option) => (
+        <label for={option.id} class="radio-label">
+          <input
+            type="radio"
+            name={name}
+            id={option.id}
+            value={option.value}
+            aria-describedby="query-error"
+          />
+          {option.label}
+        </label>
+      ))
+    }
+  </div>
+  <p class="error hidden" id="query-error"></p>
+</fieldset>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .radio-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: $form-input-radio-gap;
+    padding: $form-input-radio-padding;
+    outline: $form-input-radio-outline;
+    border-radius: $form-input-radio-border-radius;
+
+    &:has(input[type="radio"]:checked) {
+      background-color: $form-input-radio-checked-background-color;
+      outline: $form-input-radio-checked-outline;
+    }
+
+    &:hover,
+    &:focus {
+      outline: $form-input-radio-hover-outline;
+    }
+  }
+
+  input[type="radio"] {
+    display: grid;
+    place-content: center;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    color: currentColor;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $color-neutral-500;
+    border-radius: 50%;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      background: url("/assets/images/icon-radio-selected.svg");
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+
+    &:focus {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
+    }
+  }
+</style>

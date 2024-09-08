@@ -6,6 +6,11 @@
 
   width: min(100% - var(--padding), var(--max-width));
   margin-inline: auto;
+  padding-block: $container-padding-block;
+
+  @include mq(medium) {
+    padding-block: $container-padding-block-desktop;
+  }
 }
 
 .container[data-type="narrow"] {
