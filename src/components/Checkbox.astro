@@ -3,16 +3,14 @@ const { id, labelText } = Astro.props;
 ---
 
 <div>
-  <label for={id} class="checkbox-label">
+  <div class="checkbox-label">
     <input type="checkbox" id={id} aria-describedby="checkbox-error" />
-    <div>
-      <p class="flex-group">
-        {labelText}
-        <span class="visually-hidden">required</span>
-        <span class="required" aria-hidden="true">*</span>
-      </p>
-    </div>
-  </label>
+    <label for={id} class="label">
+      {labelText}
+      <span class="visually-hidden">required</span>
+      <span class="required" aria-hidden="true">*</span>
+    </label>
+  </div>
   <p class="error hidden" id="checkbox-error"></p>
 </div>
 

@@ -120,7 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Special function to handle checkbox error
   function showErrorCheckbox(checkboxElement, message) {
-    const errorElement = checkboxElement.closest("div").querySelector(".error");
+    const errorElement =
+      checkboxElement.parentNode.parentNode.querySelector(".error");
     if (errorElement) {
       errorElement.textContent = message;
       errorElement.classList.remove("hidden");
@@ -146,7 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to clear checkbox error
   function clearErrorCheckbox(checkboxElement) {
-    const errorElement = checkboxElement.closest("div").querySelector(".error");
+    const errorElement =
+      checkboxElement.parentNode.parentNode.querySelector(".error");
     if (errorElement) {
       errorElement.classList.add("hidden");
     }
