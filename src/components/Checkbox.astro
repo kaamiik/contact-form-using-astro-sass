@@ -5,11 +5,13 @@ const { id, labelText } = Astro.props;
 <div>
   <label for={id} class="checkbox-label">
     <input type="checkbox" id={id} aria-describedby="checkbox-error" />
-    <p class="flex-group">
-      {labelText}
-      <span class="visually-hidden">required</span>
-      <span class="required" aria-hidden="true">*</span>
-    </p>
+    <div>
+      <p class="flex-group">
+        {labelText}
+        <span class="visually-hidden">required</span>
+        <span class="required" aria-hidden="true">*</span>
+      </p>
+    </div>
   </label>
   <p class="error hidden" id="checkbox-error"></p>
 </div>
